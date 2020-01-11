@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<stdlib.h>
 
 
 void printboard(char board[3][3]){
@@ -13,6 +14,18 @@ void printboard(char board[3][3]){
     }
 }
 
+int filled(char board[3][3]){
+  int i, j;
+  for(i=0; i<3; i++){
+    for(j=0; j<3; j++){
+      if(board[i][j] == '_'){
+        return 0;
+      }
+    }
+  }
+  return 1;
+}
+
 
 int main(){
     char board[3][3]=
@@ -21,12 +34,14 @@ int main(){
         {'_', '_', '_'},
         {'_', '_', '_'}
     };
-    printboard(board);
-    board[1][0] = 'X';
-    printboard(board);
-    board[2][2] = 'O';
-    printboard(board);
-    board[1][1] = 'X';
-    printboard(board);
+
+    // printboard(board);
+    // board[1][0] = 'X';
+    // printboard(board);
+    // board[2][2] = 'O';
+    // printboard(board);
+    // board[1][1] = 'X';
+    // printboard(board);
+    // printf("%d", filled(board));
     return 0;
 }
