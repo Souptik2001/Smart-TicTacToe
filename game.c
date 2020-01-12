@@ -79,10 +79,10 @@ int minimax(char board[3][3], int depth, int ismax){
   int score = evaluate(board);
 
   if(score == 10){
-    return score;
+    return score-depth;
   }
   if(score == -10){
-    return score;
+    return score+depth;
   }
   if(filled(board) == 1){
     return 0;
